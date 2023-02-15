@@ -187,7 +187,7 @@ jobs:
         if [ ${{ env.CHECK_DTBO_IS_OK }} = true ] ; then
             cp -fp ../android-kernel/out/arch/${{ env.TARGET_ARCH }}/boot/dtbo.img ./
         fi
-        rm -rf .git* modules patch ramdisk
+        rm -rf .git* modules patch ramdisk LICENSE README.md
 
     - name: Upload AnyKernel3
       if: env.CHECK_KERNEL_FILE_IS_OK == 'true'
