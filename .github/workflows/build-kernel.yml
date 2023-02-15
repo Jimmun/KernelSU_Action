@@ -79,7 +79,7 @@ jobs:
       run: |
         mkdir clang
         wget -q ${{ env.CLANG_URL }} -O clang.7z
-        7z x clang.7z -r -o clang
+        7z x clang.7z -r -o ./clang
 
     - name: Checkout Kernel Source
       uses: actions/checkout@v3
@@ -186,8 +186,6 @@ jobs:
         if [ ${{ env.CHECK_DTBO_IS_OK }} = true ] ; then
             cp -fp ../android-kernel/out/arch/${{ env.TARGET_ARCH }}/boot/dtbo.img ./
         fi
-        cp -fp ../android-kernel/out/.config ./
-        cp -fp ../android-kernel/out/defconfig ./
         rm -rf .git* modules patch ramdisk
 
     - name: Upload AnyKernel3
