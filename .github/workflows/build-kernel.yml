@@ -78,8 +78,9 @@ jobs:
     - name: Download Clang
       run: |
         mkdir clang
+        cd clang
         wget -q ${{ env.CLANG_URL }} -O clang.7z
-        7z x clang.7z -r -o ./clang
+        7z x clang.7z
 
     - name: Checkout Kernel Source
       uses: actions/checkout@v3
